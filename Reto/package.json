@@ -11,5 +11,8 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "sass": "^1.43.2"
+  },
+  "dependencies": {
+    "gulp-parcel": "^0.3.6"
   }
 }

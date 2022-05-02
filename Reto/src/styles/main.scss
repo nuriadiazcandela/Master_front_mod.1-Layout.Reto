@@ -47,6 +47,7 @@ main {
     flex-direction: column-reverse;
     .top-item {
       display: flex;
+      margin: 0 auto;
     }
     img {
       flex-basis: 300px;
@@ -74,8 +75,11 @@ main {
   header {
     .header-buttons {
       justify-content: flex-end;
-      div:first-child {
-        padding-right: 30px;
+      padding-right: 0;
+      div {
+        span {
+          padding: 5px 8px;
+        }
       }
     }
   }
@@ -99,12 +103,95 @@ main {
     .second {
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       .item {
-        img {
-          max-width: 246px;
-          flex: 1 1 246px;
+        flex: 1 1 246px;
+        margin: 2px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: #101010;
+    padding: 15px 30px;
+    .header-logo {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      img {
+        width: 100px;
+      }
+      .platform-title {
+        display: block;
+        padding-left: 8px;
+      }
+    }
+    .header-buttons {
+      div {
+        span {
+          padding: 10px 8px;
+          transition: all 0.5s ease-in-out;
+          &:hover {
+            background-color: #ffffff;
+            color: #141414;
+            border-radius: 5px;
+          }
+        }
+        &:first-of-type {
+          margin-right: 10px;
         }
       }
     }
+  }
+  main {
+    padding: 30px;
+    .section-title {
+      #top-text {
+        &::before {
+          content: '5';
+        }
+      }
+    }
+    .top {
+      .top-item:first-child,
+      .top-item:nth-child(2) {
+        display: flex;
+      }
+      .top-item {
+        min-width: 225px;
+        justify-content: center;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .first,
+    .second {
+      justify-content: space-between;
+      .item {
+        flex: 1 1 250px;
+        margin: 5px;
+        img {
+          width: 100%;
+          max-width: inherit;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1900px) {
+  body {
+    max-width: 1900px;
+    margin: 0 auto;
   }
 }
